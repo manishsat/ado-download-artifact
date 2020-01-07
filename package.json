@@ -1,8 +1,8 @@
 {
-  "name": "typescript-action",
+  "name": "ado-download-artifact",
   "version": "0.0.0",
   "private": true,
-  "description": "TypeScript template action",
+  "description": "This action is to download artifact from Azure Dev Ops build pipeline",
   "main": "lib/main.js",
   "scripts": {
     "build": "tsc",
