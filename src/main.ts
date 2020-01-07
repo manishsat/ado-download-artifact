@@ -1,16 +1,16 @@
 import * as core from '@actions/core'
-import {wait} from './wait'
+import { ArtifactDownloader } from './artifact-downloader';
 
 async function run(): Promise<void> {
+  
   try {
-    const ms: string = core.getInput('milliseconds')
-    core.debug(`Waiting ${ms} milliseconds ...`)
-
-    core.debug(new Date().toTimeString())
-    await wait(parseInt(ms, 10))
-    core.debug(new Date().toTimeString())
-
-    core.setOutput('time', new Date().toTimeString())
+    const buildDefinitionId: number = Number(core.getInput('buildDefinitionId'));
+    const projectId: string = core.getInput('projectId');
+    const patToken: string = core.getInput('patToken');
+    const orgName: string = core.getInput('orgName');
+    const artifactName: string = core.getInput('artifactName');
+    const artifactDownloader = new ArtifactDownloader();
+    artifactDownloader.download(projectId,buildDefinitionId,patToken,orgName,artifactName);
   } catch (error) {
     core.setFailed(error.message)
   }
