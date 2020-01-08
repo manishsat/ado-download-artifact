@@ -36,5 +36,7 @@ Below is sample output while using in github workflow.
 Run manishsat/ado-download-artifact@v1
 Artifact download at  /home/runner/work/test-action/test-action/***
 ```
+Artifact zip file will be available under $GITHUB_WORKSPACE/{artifactName}
+
 ## License
 The scripts and documentation in this project are released under the [MIT License](LICENSE)
