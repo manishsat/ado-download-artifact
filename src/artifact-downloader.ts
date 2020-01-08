@@ -17,13 +17,16 @@ export class ArtifactDownloader {
             let connection = new azdev.WebApi(orgUrl, authHandler);
             const buildApi = await connection.getBuildApi();
             // get top build for a particular definitions
-            const builds = await buildApi.getBuilds(projectId, [buildDefinitionId], undefined, undefined, undefined,undefined, undefined, undefined,  bi.BuildStatus.Completed, undefined, undefined, undefined, 1, undefined, undefined, undefined, undefined, 'master');
+            const builds = await buildApi.getBuilds(projectId, [buildDefinitionId], undefined, undefined, undefined,undefined, undefined, undefined,  bi.BuildStatus.Completed, undefined, undefined, undefined, 1, undefined, undefined, undefined, undefined);
             const  latestBuild = builds[0];
             // get artifact as zip
-            const readableStream = await buildApi.getArtifactContentZip(projectId, Number(latestBuild.buildNumber),artifactName);
+            const readableStream = await buildApi.getArtifactContentZip(projectId, Number(latestBuild.id),artifactName);
             const artifactDirPath = `${process.env.GITHUB_WORKSPACE}/${artifactName}`
-            // create artifact directory
-            fs.mkdirSync(artifactDirPath);
+            // create artifact directory if not exists
+            if (!fs.existsSync(artifactDirPath)) {
+                fs.mkdirSync(artifactDirPath);
+            }
+            
             // store artifact
             const artifactFilePathStream = fs.createWriteStream(`${artifactDirPath}/${artifactName}.zip`);
             readableStream.pipe(artifactFilePathStream);
