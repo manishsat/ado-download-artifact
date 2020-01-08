@@ -1,4 +1,4 @@
-name: 'ado-download-artifact'
+name: 'Download Artifact from Azure Dev Ops'
 description: 'Download build artifact from Azure Dev Ops'
 author: 'Manish Satwani'
 inputs:
