@@ -1,6 +1,6 @@
 # Download artifact from Azure Dev Ops build pipeline
 
-This action takes arguments related to Azure Dev Ops build pipeline and downloads the artifacts under GITHUB_WORKSPACE, which can be used in the github workflow step.
+This action takes arguments related to Azure Dev Ops build pipeline and downloads the artifact of latest successful build under GITHUB_WORKSPACE, which can be used in the subsequent github workflow step.
 
 
 This would be very useful in case of uploading Azure Sec Pack related files to Azure VMs at the time of deployment.
