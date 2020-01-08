@@ -12,6 +12,9 @@ inputs:
     description: 'Azure DevOps organization name'
   projectId:
     description: 'Azure Dev Ops projectId for which the build and artifacts belongs to'
+branding:
+  icon: 'download-cloud'
+  color: 'blue'
 runs:
   using: 'node12'
   main: 'lib/main.js'
