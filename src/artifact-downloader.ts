@@ -30,6 +30,8 @@ export class ArtifactDownloader {
             // store artifact
             const artifactFilePathStream = fs.createWriteStream(`${artifactDirPath}/${artifactName}.zip`);
             readableStream.pipe(artifactFilePathStream);
-            readableStream.on('end',()=>console.log('Artifact download at ', `${artifactDirPath}`));
+            readableStream.on('end',()=>{
+                console.log(`Artifact of build number ${latestBuild.buildNumber} downloaded at ${artifactDirPath}`);
+            });
     }
 }
