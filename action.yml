@@ -1,5 +1,5 @@
-name: 'Download Artifact from Azure Dev Ops'
-description: 'Download build artifact from Azure Dev Ops'
+name: 'Download Artifact from Azure DevOps'
+description: 'Download build artifact from Azure DevOps'
 author: 'Manish Satwani'
 inputs:
   buildDefinitionId:
@@ -11,7 +11,7 @@ inputs:
   orgName:
     description: 'Azure DevOps organization name'
   projectId:
-    description: 'Azure Dev Ops projectId for which the build and artifacts belongs to'
+    description: 'Azure DevOps projectId for which the build and artifacts belongs to'
 branding:
   icon: 'download-cloud'
   color: 'blue'
