@@ -6,12 +6,14 @@ inputs:
     description: 'Build Definition Id for which the artifact is going to be downloaded'
   pattoken:
     description: 'PAT token to access build and build artifacts'
-  artifactName: 
+  artifactName:
     description: 'Name of the artifact'
   orgName:
     description: 'Azure DevOps organization name'
   projectId:
     description: 'Azure DevOps projectId for which the build and artifacts belongs to'
+  branchName:
+    description: 'Branch name to use for filtering builds'
 branding:
   icon: 'download-cloud'
   color: 'blue'
